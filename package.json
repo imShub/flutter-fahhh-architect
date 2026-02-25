@@ -1,0 +1,113 @@
+{
+  "name": "flutter-fahhh-architect",
+  "displayName": "flutter-fahhh-architect",
+  "description": "Generate Clean Architecture Flutter apps with a Fahhh twist",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.109.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:flutterFahhhArchitect.createApp",
+    "onCommand:flutterFahhhArchitect.support",
+    "onCommand:flutter-fahhh-architect.createApp",
+    "onCommand:flutter-fahhh-architect.support"
+  ],
+  "main": "./dist/extension.js",
+  "extensionKind": [
+    "ui"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "flutterFahhhArchitect.createApp",
+        "title": "Flutter Fahhh: Create App",
+        "category": "Flutter Fahhh Architect"
+      },
+      {
+        "command": "flutterFahhhArchitect.support",
+        "title": "Flutter Fahhh: Support (Buy Me a Coffee)",
+        "category": "Flutter Fahhh Architect"
+      },
+      {
+        "command": "flutter-fahhh-architect.createApp",
+        "title": "Flutter Fahhh: Create App (legacy id)",
+        "category": "Flutter Fahhh Architect"
+      },
+      {
+        "command": "flutter-fahhh-architect.support",
+        "title": "Flutter Fahhh: Support (legacy id)",
+        "category": "Flutter Fahhh Architect"
+      }
+    ],
+    "configuration": {
+      "title": "Flutter Fahhh Architect",
+      "properties": {
+        "flutterFahhhArchitect.defaultArchitecture": {
+          "type": "string",
+          "enum": [
+            "Clean Architecture",
+            "MVVM"
+          ],
+          "default": "Clean Architecture",
+          "description": "Default architecture when creating a new Flutter app."
+        },
+        "flutterFahhhArchitect.defaultStateManagement": {
+          "type": "string",
+          "enum": [
+            "Riverpod",
+            "Bloc",
+            "Provider"
+          ],
+          "default": "Riverpod",
+          "description": "Default state management when creating a new Flutter app."
+        },
+        "flutterFahhhArchitect.humorMode": {
+          "type": "string",
+          "enum": [
+            "professional",
+            "balanced",
+            "chaotic"
+          ],
+          "default": "balanced",
+          "description": "Controls how spicy the console humor is."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.109.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.54.0",
+    "eslint": "^9.39.2",
+    "esbuild": "^0.27.2",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  },
+  "files": [
+    "dist/**",
+    "templates/**",
+    "README.md",
+    "CHANGELOG.md",
+    "vsc-extension-quickstart.md"
+  ]
+}

@@ -1,0 +1,28 @@
+name: flutter_fahhh_mvvm_template
+description: MVVM + Provider template (lib-only) for Flutter Fahhh Architect.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  provider: ^6.1.2
+  dio: ^5.7.0
+  audioplayers: ^6.1.0
+  url_launcher: ^6.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/sounds/
