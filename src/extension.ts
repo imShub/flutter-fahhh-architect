@@ -16,7 +16,7 @@ const COMMANDS = {
 	legacySupport: 'flutter-fahhh-architect.support',
 };
 
-const BUY_ME_A_COFFEE_URL = 'https://www.buymeacoffee.com/';
+const BUY_ME_A_COFFEE_URL = 'https://buymeacoffee.com/imshub';
 
 type ArchitectureChoice = 'Clean Architecture' | 'MVVM';
 type StateChoice = 'Riverpod' | 'Bloc' | 'Provider';
